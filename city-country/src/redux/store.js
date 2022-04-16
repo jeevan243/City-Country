@@ -8,4 +8,4 @@ export const store = createStore(reducer, {
     error: false
 });
 
-console.log(store.loading)
+console.log(store)

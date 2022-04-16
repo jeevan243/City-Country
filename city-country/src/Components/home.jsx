@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 export const Home = () => {
   const [data, setData] = useState([]);
 
-  const dispatch = useDispatch();
-  const { city, loading, error } = useSelector((store) => store.city);
+  // const dispatch = useDispatch();
+  // const { city, loading, error } = useSelector((store) => store.city);
   // console.log(city);
 
   useEffect(() => {
@@ -54,25 +55,28 @@ export const Home = () => {
     <>
       <div>
         <h3>Filter By:</h3>
-        <button variant="text" onClick={handleCountry}>
+        <Button variant="contained" onClick={handleCountry}>
           Country
-        </button>
-        <button
-          variant="text"
+        </Button>
+        {" "}
+        <Button
+          variant="contained"
           onClick={() => {
             handlePopulation(1);
-          }}
+          }} 
         >
           Population asc
-        </button>
-        <button
-          variant="text"
+        </Button>
+
+        {" "}
+        <Button
+          variant="contained"
           onClick={() => {
             handlePopulation(-1);
           }}
         >
           Population desc
-        </button>
+        </Button>
         <hr />
       </div>
       <div id="links">
