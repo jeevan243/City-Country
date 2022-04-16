@@ -17,8 +17,9 @@ export const Home = () => {
 
   //delete
   function handleDelete(e) {
-    let { id } = e.target;
     console.log(e);
+    axios.delete(`http://localhost:8080/cities/${e}`);
+    getData();
   }
   //sort country
 
@@ -105,15 +106,14 @@ export const Home = () => {
                     <td>
                       <button>Edit</button>
                     </td>
-                    <td>
-                      <button
-                        onClick={(e) => {
-                          handleDelete(e);
-                        }}
-                      >
-                        Delete
-                      </button>
-                    </td>
+
+                    <button
+                      onClick={() => {
+                        handleDelete(e.id);
+                      }}
+                    >
+                      Delete
+                    </button>
                   </tr>
                 </>
               );

@@ -5,12 +5,6 @@
       "population": "150000",
       "country": "india",
       "id": 1
-    },
-    {
-      "cityname": "mumbai",
-      "population": "1500000000",
-      "country": "India",
-      "id": 2
     }
   ],
   "countries": [
