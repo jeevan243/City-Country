@@ -4,7 +4,7 @@ export const Addcountry = () => {
   const [country, setCountry] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
-    axios.post("http://localhost:8080/countries", { name: country });
+    axios.post("https://city-country.herokuapp.com/countries", { name: country });
   }
   function handleChange(e) {
     setCountry(e.target.value);

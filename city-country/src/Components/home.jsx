@@ -10,7 +10,7 @@ export const Home = () => {
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:8080/cities").then((res) => {
+    axios.get("https://city-country.herokuapp.com/cities").then((res) => {
       setData(res.data);
     });
   };
@@ -18,7 +18,7 @@ export const Home = () => {
   //delete
   function handleDelete(e) {
     console.log(e);
-    axios.delete(`http://localhost:8080/cities/${e}`);
+    axios.delete(`https://city-country.herokuapp.com/cities/${e}`);
     getData();
   }
   //sort country

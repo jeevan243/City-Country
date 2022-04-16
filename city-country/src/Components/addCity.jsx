@@ -17,7 +17,7 @@ export const Addcity = () => {
   }, []);
 
   const getData = () => {
-    axios.get("http://localhost:8080/countries").then((res) => {
+    axios.get("https://city-country.herokuapp.com/countries").then((res) => {
       setCountryselect(res.data);
     });
   };
@@ -33,7 +33,7 @@ export const Addcity = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8080/cities", data).then((res) => {
+    axios.post("https://city-country.herokuapp.com/cities", data).then((res) => {
       alert("Data saved Successfully");
     });
   };
