@@ -71,7 +71,10 @@ export const Home = () => {
         <hr />
       </div>
       <div id="links">
-        <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Link
+          to={"https://city-country.herokuapp.com/"}
+          style={{ textDecoration: "none" }}
+        >
           Home
         </Link>{" "}
         <Link to={"/addcountry"} style={{ textDecoration: "none" }}>
