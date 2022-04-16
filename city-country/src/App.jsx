@@ -1,18 +1,13 @@
-import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Addcity } from "./Components/addCity";
 import { Addcountry } from "./Components/addCountry";
 import { Home } from "./Components/home";
+import { AllRouters } from "./Routers";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/addcity" element={<Addcity />} />
-        <Route path="/addcountry" element={<Addcountry />} />
-      </Routes>
+      <AllRouters />
     </div>
   );
 }
