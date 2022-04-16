@@ -1,9 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
   const [data, setData] = useState([]);
+
+  const dispatch = useDispatch();
+  const { city, loading, error } = useSelector((store) => store.city);
+  // console.log(city);
 
   useEffect(() => {
     getData();

@@ -1,16 +1,22 @@
 
-import { ADD_CITY, ADD_COUNTRY } from "./actionType";
+import { ADD_CITY, GET_DATA_ERROR, GET_DATA_LOADING } from "./actionType";
+
+
 
 export const reducer = (store, { type, payload }) => {
 
     switch (type) {
         case ADD_CITY:
             return {
-                ...store, city: payload
+                ...store, city: payload, loading: false, error: false
             }
-        case ADD_COUNTRY:
+        case GET_DATA_LOADING:
             return {
-                ...store, country: payload
+                ...store, loading: true
+            }
+        case GET_DATA_ERROR:
+            return {
+                ...store, error: true
             }
         default:
             return store;
