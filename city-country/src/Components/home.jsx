@@ -27,7 +27,7 @@ export const Home = () => {
     data.sort(function (a, b) {
       return a.country.localeCompare(b.country);
     });
-    console.log(data);
+    // console.log(data);
     setData([...data]);
   }
 
