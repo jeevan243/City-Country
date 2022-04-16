@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const Addcity = () => {
@@ -6,19 +7,35 @@ export const Addcity = () => {
     population: "",
     country: "",
   };
+
   let [data, setData] = useState(obj);
-  let countryArray = [{ name: "india" }, { name: "Russia" }];
+
+  let [countrySelect, setCountryselect] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = () => {
+    axios.get("http://localhost:8080/countries").then((res) => {
+      setCountryselect(res.data);
+    });
+  };
+
+  console.log(countrySelect);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
 
-    console.log(value);
+    // console.log(value);
     setData({ ...data, [id]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    axios.post("http://localhost:8080/cities", data).then((res) => {
+      alert("Data saved Successfully");
+    });
   };
 
   return (
@@ -34,7 +51,7 @@ export const Addcity = () => {
           <label>Country: </label>
           <select name="" id="country" onChange={handleChange}>
             <option>Select Country</option>
-            {countryArray.map((e) => {
+            {countrySelect.map((e) => {
               return (
                 <>
                   <option value={e.name}>{e.name}</option>

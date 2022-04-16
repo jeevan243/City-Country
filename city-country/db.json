@@ -1,3 +1,16 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityname": "hyderbad",
+      "population": "150000",
+      "country": "india",
+      "id": 1
+    }
+  ],
+  "countries": [
+    {
+      "name": "Dubai",
+      "id": 1
+    }
+  ]
 }
