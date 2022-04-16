@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Home />
       <Routes>
-        <Route path="https://city-country.herokuapp.com" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/addcity" element={<Addcity />} />
         <Route path="/addcountry" element={<Addcountry />} />
       </Routes>
